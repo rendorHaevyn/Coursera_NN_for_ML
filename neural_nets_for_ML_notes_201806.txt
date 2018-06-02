@@ -1,0 +1,67 @@
+INDEX:
+== WEEK 1 - INTRODUCTION ==
+== WEEK 2 - NEURAL NETWORK ARCHITECTURE ==
+
+
+== WEEK 1 - INTRODUCTION ==
+** We can envisage 5 types of idealised neurons **
+
+Linear Neurons:
+> y = b + Σx(i)w(i)
+
+Binary Threshold Neurons (ie: 0 or 1 if greater than threshold):
+> activiation threshold = θ
+> z = b + Σx(i)w(i)
+> y = {1 if z>= θ, else 0
+
+Rectified Linear Neurons / Units:
+> compute linear weighted sum of their inputs, and output a non-linear function of the total input
+> activiation threshold = θ
+> z = b + Σx(i)w(i)
+> y = {z if z>= θ, else 0
+> we can also treat ReLU output as a Poisson rate for activation, rather than a real number
+
+Sigmoid Neurons:
+> return a real-valued output, that is a smooth and bounded function of their total input 
+> typically use logistic function
+> returns real value
+> z = b + Σx(i)w(i)
+> y = 1 / (1 + e^-z)
+> ie: if z is large: y --> 1; z is 0: y --> 0.5; z is small: y --> 0
+
+Stochastic Binary Neurons:
+> use the same algorithm as sigmioid nerons (logistic), however, convert the output into a probability, and use that to make a binary decision / classification
+> activiation threshold = θ
+> returns probability, which becomes binary decision
+> z = b + Σx(i)w(i)
+> y = {1 if (1 / (1 + e^-z)) > θ, else 0)
+
+Tanh Neuron:
+> as above, except producing a value in range {-1,1}
+> activiation threshold = θ
+> returns real value
+> z = b + Σx(i)w(i)
+> y = {tanh(z) if z > θ, else 0
+
+
+** Types of learning **
+
+Supervised Learning:
+> Regression: The target output is a real number or vector of real numbers, ie: temperature tomorrow, price of stock in 6 months
+> Classification: The target output is a class label, ie: choice between 1 or 0, or between car model
+> We choose a model-class, which are defined by different algorithms
+- ŷ = ƒ(x:W) 
+- the model-class, ƒ, uses numerical parameters, W, to map each input vector, x, into a predicted output, ŷ
+- parameters are adjusted to reduce the loss or difference between target output, y, on each training case, and the predicted output of the model, ŷ
+- we often used teh squared difference for this, 1/2 (y - ŷ)^2
+
+Unsupervised Learning:
+> Aims include:
+- An internal representation of the input that can be useful for subsequent supervised learning / reinforcement learning (ie: K-Means clustering)
+- Provide compact, low-representation of the input (ie: PCA)
+
+
+== WEEK 2 - NEURAL NETWORK ARCHITECTURE ==
+
+
+
