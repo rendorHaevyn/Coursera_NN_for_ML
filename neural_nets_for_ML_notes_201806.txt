@@ -43,7 +43,6 @@ Tanh Neuron:
 > z = b + Σx(i)w(i)
 > y = {tanh(z) if z > θ, else 0
 
-
 ** Types of learning **
 
 Supervised Learning:
@@ -62,6 +61,37 @@ Unsupervised Learning:
 
 
 == WEEK 2 - NEURAL NETWORK ARCHITECTURE ==
+** There are 3 typical architectures of neural networks **
+
+Feed-forward Neural Networks:
+> Input units layer --> hidden units layer (if > 1 layer then these are called "deep" neural networks) --> output units layer
+
+Recurrent Neural Networks:
+> Have directed cycles in their connection graph
+> Complicated dynamics, difficult to train
+> The hidden layers can act as time "slices", ie: might be useful for predicting the price of a stock, given the price each day over the last 5 years
+- they use the same weights at every time slice and receive input at each time slice
+
+Symmetrically Connected Neural Networks:
+> Like RNNs, but that connections between units are symmetrical, having the same weight in both directions
+> They cannot model cycles
+
+** Perceptrons **
+> Are a standard model for statistical pattern recognition
+> Inputs --> hand-coded weights --> feature units --> learned weights --> decision unit (class decision based upon threshold)
+> Biases constitute an additional feature, with an activity of 1, for which we can learn the weight
+
+Perceptron convergence procedure:
+> For each training example:
+- If output is correct, leave weights as they are
+- If output is incorrectly a 0, add input vector to the weights
+- If output is incorrectly a 1, subtract input vector from the weights
+
+Inputs can be regarded as constraints to the NN, inasmuch as they constrain the set of weights that give the correct classification results.
+
+
+
+
 
 
 
