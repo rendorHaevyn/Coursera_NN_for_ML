@@ -1,6 +1,9 @@
 INDEX:
 == WEEK 1 - INTRODUCTION ==
 == WEEK 2 - NEURAL NETWORK ARCHITECTURE ==
+== WEEK 3 - NEURAL NETWOKS FOR MACHINE LEARNING ==
+
+
 
 
 == WEEK 1 - INTRODUCTION ==
@@ -90,6 +93,47 @@ Perceptron convergence procedure:
 Inputs can be regarded as constraints to the NN, inasmuch as they constrain the set of weights that give the correct classification results.
 
 
+== WEEK 3 - NEURAL NETWOKS FOR MACHINE LEARNING ==
+
+Learning Weights of a Linear Neuron:
+> real valued output which is a weighted sum of their input
+- ŷ = Σw(i)x(i) = w^(T).x  ==> weight vector dot-product input vector
+> minimise error summed over all training cases
+- E = 1/2 . Σ(y-ŷ)^2
+> we apply a delta rule for learning
+- Δw(i) = εx(i).(y-ŷ), where ε = learning rate
+
+Learning Weights of a Logistic output Neuron:
+> logit, z, is a bias plus sum product weight vector and input vector
+- z = b + Σw(i)x(i)
+- ŷ = 1 / (1 + e^-z)
+
+BackPropagation:
+> For hidden units, we can compute how fast the error changes as we change hidden activity (weights)
+> We compute the error derivatives for all the hidden units simultaneously (ie: error derivative = how fast the error changes as we change the hidden activity)
+> We use error derivatives in distal layers to feed back in to error derivatives in proximal layers
+> The error derivatives are calculated for every weight on a single training case
+> How to uses these error derivatives:
+1. Optimisation
+> How often to update:
+- Online: update weights after each training case
+- Full batch: update weights after full traing set is trained - this can be quite timely / cost ineffective
+- Mini-batch: small random sample of trainng cases
+> How much to update:
+- fixed learning rate
+- adaptive learning rate
+- apply learning rate differently across connections between layers
+2. Overfitting
+> Training data has two types of noise:
+- target values may be unreliable
+- there is sampling error
+> How to deal with overfitting
+- weight decay, which is keeping network weights small
+- weight sharing, which is keeping weights similar across features
+- early stopping, which is stopping training when performance on test set gets worse
+- model average, which are weights averaged across multiple trained nerual nets
+- Bayesian fitting of neural nets, which is like model averaging
+- dropout, which is randomly dropping hidden nodes when training
 
 
 
