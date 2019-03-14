@@ -134,8 +134,4 @@ BackPropagation:
 - model average, which are weights averaged across multiple trained nerual nets
 - Bayesian fitting of neural nets, which is like model averaging
 - dropout, which is randomly dropping hidden nodes when training
-
-
-
-
-
+- generative pre-training, which is ...
